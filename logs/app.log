@@ -1,0 +1,56 @@
+2021.04.15 at 21:03:15 GMT+08:00 INFO  amoj.Judge 133 parseToResult - =====stdout====null
+2021.04.15 at 21:04:11 GMT+08:00 INFO  amoj.Judge 133 parseToResult - =====stdout====null
+2021.04.15 at 21:05:39 GMT+08:00 ERROR amoj.Judge 50 judge - javawzy-classpathwzyE:\amoj/1wzyMain
+2021.04.15 at 21:05:39 GMT+08:00 ERROR amoj.Judge 51 judge - /1
+2021.04.15 at 21:05:39 GMT+08:00 ERROR amoj.Judge 52 judge - python  javawzy-classpathwzyE:\amoj/1wzyMain /1 E:\amoj/1 1000 10000
+2021.04.15 at 21:05:39 GMT+08:00 INFO  amoj.Judge 136 parseToResult - =====stdout====null
+2021.04.15 at 21:06:39 GMT+08:00 ERROR amoj.Judge 50 judge - process:javawzy-classpathwzyE:\amoj/1wzyMain
+2021.04.15 at 21:06:39 GMT+08:00 ERROR amoj.Judge 51 judge - /1
+2021.04.15 at 21:06:39 GMT+08:00 ERROR amoj.Judge 52 judge - python  javawzy-classpathwzyE:\amoj/1wzyMain /1 E:\amoj/1 1000 10000
+2021.04.15 at 21:06:39 GMT+08:00 INFO  amoj.Judge 136 parseToResult - =====stdout====null
+2021.04.15 at 22:58:53 GMT+08:00 ERROR amoj.Judge 50 judge - process:javawzy-classpathwzyE:\amoj/1wzyMain
+2021.04.15 at 22:58:53 GMT+08:00 ERROR amoj.Judge 51 judge - /1
+2021.04.15 at 22:58:53 GMT+08:00 ERROR amoj.Judge 52 judge - python  javawzy-classpathwzyE:\amoj/1wzyMain /1 E:\amoj/1 1000 10000
+2021.04.15 at 22:58:53 GMT+08:00 INFO  amoj.Judge 136 parseToResult - =====stdout====null
+2021.04.16 at 13:12:52 GMT+08:00 ERROR amoj.Judge 50 judge - process:javawzy-classpathwzyE:\amoj/1wzyMain
+2021.04.16 at 13:12:52 GMT+08:00 ERROR amoj.Judge 51 judge - /1
+2021.04.16 at 13:12:52 GMT+08:00 ERROR amoj.Judge 52 judge - python  javawzy-classpathwzyE:\amoj/1wzyMain /1 E:\amoj/1 1000 10000
+2021.04.16 at 13:12:52 GMT+08:00 INFO  amoj.Judge 136 parseToResult - =====stdout====null
+2021.04.16 at 13:16:25 GMT+08:00 ERROR amoj.Judge 50 judge - process:python3amojE:\amoj/1/__pycache__/
+2021.04.16 at 13:16:25 GMT+08:00 ERROR amoj.Judge 51 judge - /1
+2021.04.16 at 13:16:25 GMT+08:00 ERROR amoj.Judge 52 judge - python  python3amojE:\amoj/1/__pycache__/ /1 E:\amoj/1 1000 10000
+2021.04.16 at 13:16:25 GMT+08:00 INFO  amoj.Judge 136 parseToResult - =====stdout====null
+2021.04.16 at 13:18:26 GMT+08:00 ERROR amoj.Judge 50 judge - process:python3amojE:\amoj/1/__pycache__/
+2021.04.16 at 13:18:26 GMT+08:00 ERROR amoj.Judge 51 judge - E:/amoj/1000/1000
+2021.04.16 at 13:18:26 GMT+08:00 ERROR amoj.Judge 52 judge - python E:/amoj/1000 python3amojE:\amoj/1/__pycache__/ E:/amoj/1000/1000 E:\amoj/1 1000 10000
+2021.04.16 at 13:20:41 GMT+08:00 ERROR amoj.Judge 50 judge - process:python3amojE:\amoj/1/__pycache__/
+2021.04.16 at 13:20:41 GMT+08:00 ERROR amoj.Judge 51 judge - E:/amoj/1000
+2021.04.16 at 13:20:41 GMT+08:00 ERROR amoj.Judge 52 judge - python E:/amoj/1000 python3amojE:\amoj/1/__pycache__/ E:/amoj/1000 E:\amoj/1 1000 10000
+2021.04.16 at 13:23:16 GMT+08:00 ERROR amoj.Judge 50 judge - process:python3spaceE:\amoj/1/__pycache__/
+2021.04.16 at 13:23:16 GMT+08:00 ERROR amoj.Judge 51 judge - E:/amoj/1000
+2021.04.16 at 13:23:16 GMT+08:00 ERROR amoj.Judge 52 judge - python  python3spaceE:\amoj/1/__pycache__/ E:/amoj/1000 E:\amoj/1 1000 10000
+2021.04.16 at 13:23:16 GMT+08:00 INFO  amoj.Judge 136 parseToResult - =====stdout====null
+2021.04.16 at 13:24:19 GMT+08:00 ERROR amoj.Judge 50 judge - process:python3spaceE:\amoj/1/__pycache__/
+2021.04.16 at 13:24:19 GMT+08:00 ERROR amoj.Judge 51 judge - E:/amoj/1000
+2021.04.16 at 13:24:19 GMT+08:00 ERROR amoj.Judge 52 judge - python  python3spaceE:\amoj/1/__pycache__/ E:/amoj/1000 E:\amoj/1 1000 10000
+2021.04.16 at 13:24:19 GMT+08:00 ERROR amoj.Judge 130 parseToResult - null
+2021.04.16 at 13:24:19 GMT+08:00 ERROR amoj.Judge 131 parseToResult - null
+2021.04.16 at 13:24:19 GMT+08:00 INFO  amoj.Judge 138 parseToResult - =====stdout====null
+2021.04.16 at 13:25:36 GMT+08:00 ERROR amoj.Judge 50 judge - process:python3spaceE:\amoj/1/__pycache__/
+2021.04.16 at 13:25:36 GMT+08:00 ERROR amoj.Judge 51 judge - E:/amoj/1000
+2021.04.16 at 13:25:36 GMT+08:00 ERROR amoj.Judge 52 judge - python E:\idea space\amoj\judge.py python3spaceE:\amoj/1/__pycache__/ E:/amoj/1000 E:\amoj/1 1000 10000
+2021.04.16 at 13:25:36 GMT+08:00 ERROR amoj.Judge 130 parseToResult - null
+2021.04.16 at 13:25:36 GMT+08:00 ERROR amoj.Judge 131 parseToResult - null
+2021.04.16 at 13:25:36 GMT+08:00 INFO  amoj.Judge 138 parseToResult - =====stdout====null
+2021.04.16 at 13:26:29 GMT+08:00 ERROR amoj.Judge 50 judge - process:python3speiE:\amoj/1/__pycache__/
+2021.04.16 at 13:26:29 GMT+08:00 ERROR amoj.Judge 51 judge - E:/amoj/1000
+2021.04.16 at 13:26:29 GMT+08:00 ERROR amoj.Judge 52 judge - python E:\idea space\amoj\judge.py python3speiE:\amoj/1/__pycache__/ E:/amoj/1000 E:\amoj/1 1000 10000
+2021.04.16 at 13:26:29 GMT+08:00 ERROR amoj.Judge 130 parseToResult - null
+2021.04.16 at 13:26:29 GMT+08:00 ERROR amoj.Judge 131 parseToResult - null
+2021.04.16 at 13:26:29 GMT+08:00 INFO  amoj.Judge 138 parseToResult - =====stdout====null
+2021.04.16 at 13:42:25 GMT+08:00 ERROR amoj.Judge 50 judge - process:python3speiE:\amoj/1/__pycache__/
+2021.04.16 at 13:42:25 GMT+08:00 ERROR amoj.Judge 51 judge - E:/amoj/1000
+2021.04.16 at 13:42:25 GMT+08:00 ERROR amoj.Judge 52 judge - python E:\judge_script\judge.py python3speiE:\amoj/1/__pycache__/ E:/amoj/1000 E:\amoj/1 1000 10000
+2021.04.16 at 13:42:25 GMT+08:00 ERROR amoj.Judge 130 parseToResult - null
+2021.04.16 at 13:42:25 GMT+08:00 ERROR amoj.Judge 131 parseToResult - null
+2021.04.16 at 13:42:25 GMT+08:00 INFO  amoj.Judge 138 parseToResult - =====stdout====null
