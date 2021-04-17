@@ -7,8 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Admin {
-    private Long adminId;
-    private String username;
-    private String password;
+public class ExecMsg {
+  private String error;
+  private String input;
+  private String output;
 }

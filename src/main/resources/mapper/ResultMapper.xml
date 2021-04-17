@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="amoj.dao.ResultDao" >
+
+    <select id="allResults" resultType="amoj.entity.Result">
+        select * from result
+    </select>
+
+    <select id="findResultById" parameterType="long" resultType="amoj.entity.Result">
+        SELECT * from result where result_id = #{resultId}
+    </select>
+
+    <insert id="addResult" parameterType="amoj.entity.Result"  useGeneratedKeys="true" keyProperty="resultId">
+        insert into result(submit_id,used_time,used_mem,result,result_msg,acc)
+        values (#{submitId},#{usedTime},#{usedMem},#{result},#{resultMsg},#{acc})
+    </insert>
+
+    <update id="updateResultById" parameterType="amoj.entity.Result">
+        update result
+        <trim prefix="set" suffixOverrides=",">
+            <if test="resultId != null and resultId != ''">
+                result_id = #{resultId},
+            </if>
+            <if test="submitId != null and submitId != ''">
+                submit_id = #{submitId},
+            </if>
+            <if test="usedTime != null and usedTime != ''">
+                used_time = #{usedTime},
+            </if>
+            <if test="usedMem != null and usedMem != ''">
+                used_mem = #{usedMem},
+            </if>
+            <if test="result != null and result != ''">
+                result = #{result},
+            </if>
+            <if test="resultMsg != null and resultMsg != ''">
+                result_msg = #{resultMsg},
+            </if>
+            <if test="acc != null and acc != ''">
+                acc = #{acc},
+            </if>
+        </trim>
+        where result_id=#{resultId}
+    </update>
+
+    <delete id="deleteResultById" parameterType="long">
+        delete from result where result_id = #{resultId}
+    </delete>
+</mapper>

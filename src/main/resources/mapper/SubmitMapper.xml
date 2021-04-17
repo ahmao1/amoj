@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="amoj.dao.SubmitDao" >
+
+    <select id="allSubmits" parameterType="map" resultType="amoj.entity.Submit">
+        select * from submit
+    </select>
+
+    <select id="findSubmitById" parameterType="map" resultType="amoj.entity.Submit">
+        SELECT * from submit where submit_id = #{submitId}
+    </select>
+
+    <insert id="addSubmit"  useGeneratedKeys="true" keyProperty="submit_id">
+        insert into submit(problem_id,language,user_id,submit_time,source,time,mem,result_id)
+        values (#{problemId},#{language},#{userId},#{submitTime},#{source},#{time},#{mem},#{resultId})
+    </insert>
+
+    <update id="updateSubmitById">
+        update submit
+        <trim prefix="set" suffixOverrides=",">
+            <if test="problemId != null and problemId != ''">
+                problem_id = #{problemId},
+            </if>
+            <if test="language != null and language != ''">
+                language = #{language},
+            </if>
+            <if test="userId != null and userId != ''">
+                user_id = #{userId},
+            </if>
+            <if test="submitTime != null and submitTime != ''">
+                submit_time = #{submitTime},
+            </if>
+            <if test="source != null and source != ''">
+                source = #{source},
+            </if>
+            <if test="time != null and time != ''">
+                time = #{time},
+            </if>
+            <if test="mem != null and mem != ''">
+                mem = #{mem},
+            </if>
+            <if test="resultId != null and resultId != ''">
+                result_id = #{resultId},
+            </if>
+        </trim>
+        where submit_id=#{submitId}
+    </update>
+
+    <delete id="deleteSubmitById" parameterType="long">
+        delete from submit where  submit_id = #{submitId}
+    </delete>
+</mapper>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="amoj.dao.UserDao" >
+
+    <select id="allUsers" resultType="amoj.entity.User">
+        select * from user
+    </select>
+
+    <select id="findUserById" parameterType="long" resultType="amoj.entity.User">
+        SELECT * from user where user_id = #{userId}
+    </select>
+
+    <insert id="addUser" parameterType="amoj.entity.User">
+        insert into user(user_id,username,password,submit,solve_number,solve_pid,submit_number,submit_pid)
+        values (#{userId} ,#{username},#{password},#{submit},#{solveNumber},#{solvePid},#{submitNumber},#{submitPid})
+    </insert>
+
+    <update id="updateUserById" parameterType="amoj.entity.User">
+        update user
+        <trim prefix="set" suffixOverrides=",">
+            <if test="username != null and username != ''">
+                username = #{username},
+            </if>
+            <if test="password != null and password != ''">
+                password = #{password},
+            </if>
+            <if test="submit != null and submit != ''">
+                submit = #{submit},
+            </if>
+            <if test="solveNumber != null and solveNumber != ''">
+                solve_number = #{solveNumber},
+            </if>
+            <if test="solvePid != null and solvePid != ''">
+                solve_pid = #{solvePid},
+            </if>
+            <if test="submitNumber != null and submitNumber != ''">
+                submit_number = #{submitNumber},
+            </if>
+            <if test="submitPid != null and submitPid != ''">
+                submit_pid = #{submitPid},
+            </if>
+        </trim>
+        where user_id=#{userId}
+    </update>
+
+    <delete id="deleteUserById" parameterType="long">
+        delete from user where user_id = #{userId}
+    </delete>
+</mapper>

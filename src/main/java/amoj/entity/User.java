@@ -1,9 +1,15 @@
 package amoj.entity;
 
 import com.alibaba.fastjson.JSON;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class User {
     private Long userId;
 
@@ -15,9 +21,9 @@ public class User {
 
     private Long solveNumber;
 
-    private JSON solvePid;
+    private String solvePid;
 
     private Long submitNumber;
 
-    private JSON submitPid;
+    private String submitPid;
 }

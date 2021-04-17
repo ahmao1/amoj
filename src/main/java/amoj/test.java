@@ -4,6 +4,7 @@ import amoj.vo.JudgeResult;
 import amoj.vo.JudgeTask;
 
 public class test {
+    /*
     public static void main(String[] args) {
         JudgeTask task = new JudgeTask(
                 "1",
@@ -18,4 +19,6 @@ public class test {
         );
         JudgeResult x = Judge.judge(task);
     }
+    
+     */
 }
