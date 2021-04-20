@@ -4,6 +4,25 @@ import java.util.ResourceBundle;
 
 public class PropertiesUtil {
     private static final ResourceBundle resource = ResourceBundle.getBundle("amoj_config");
+    public static final int PAGE_SIZE = 7;
+    public static final String[]
+            RESULT = {
+            "Accepted",
+            "Presentation Error",
+            "Time Limit Exceeded",
+            "Memory Limit Exceeded",
+            "Wrong Answer",
+            "Runtime Error",
+            "Output Limit Exceeded",
+            "Compile Error",
+            "System Error"};
+
+    public static final String[]
+            LANGUAGE = {
+            "",
+            "c",
+            "cpp",
+            "java",};
 
     public PropertiesUtil() {
     }

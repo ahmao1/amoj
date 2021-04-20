@@ -17,10 +17,6 @@ public class PantiService {
     @Autowired
     private RedisTemplate redisTemplate;
 
-    /*@TODO 传送数据到linux上的判题模块
-   数据：submitId，语言，题目id，源代码，时限，内存限制，
-   返回得到：
-*/
     @Async("asyncServiceExecutor")
     public void panti(Submit submit){
         log.info("new submit " + submit);

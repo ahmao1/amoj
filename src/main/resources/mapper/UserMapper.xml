@@ -10,6 +10,10 @@
         SELECT * from user where user_id = #{userId}
     </select>
 
+    <select id="authenticate" resultType="amoj.entity.User">
+        SELECT * from user where user_id = #{userId} and password = #{password}
+    </select>
+
     <insert id="addUser" parameterType="amoj.entity.User">
         insert into user(user_id,username,password,submit,solve_number,solve_pid,submit_number,submit_pid)
         values (#{userId} ,#{username},#{password},#{submit},#{solveNumber},#{solvePid},#{submitNumber},#{submitPid})

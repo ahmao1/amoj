@@ -1,8 +1,10 @@
 package amoj.service;
 
 import amoj.dao.ProblemDao;
+import amoj.dao.SubmitDao;
 import amoj.entity.ExecMsg;
 import amoj.entity.Problem;
+import amoj.entity.User;
 import amoj.utils.ExecUtil;
 import amoj.utils.PropertiesUtil;
 import com.github.pagehelper.PageHelper;
@@ -20,34 +22,73 @@ public class ProblemService {
 
     @Autowired
     ProblemDao problemDao;
+    @Autowired
+    SubmitDao submitDao;
+
     private static Logger log = Logger.getLogger("ProblemService");
 
     //入参: 当前页, 每页的记录数
     public PageInfo<Problem> allProblems(int page, int size){
         PageHelper.startPage(page, size);
-        List list = problemDao.allProblems();
+        List<Problem> list = problemDao.allProblems();
         PageInfo<Problem> pageInfo = new PageInfo<>(list);
         return  pageInfo;  //获取分页对象
     }
 
-    public void addProblemData(Long problemId){
-        /*@TODO 假设文件已经在E:/amoj_data/{problemId}    --path
-            需要传到am@192.168.154.128:/home/amoj_data    --address
-         */
+    public PageInfo<Problem> findProblemsByTitle(int page, int size, String word){
+        PageHelper.startPage(page, size);
+        List<Problem> list = problemDao.findProblemsByTitle(word);
+        PageInfo<Problem> pageInfo = new PageInfo<>(list);
+        return  pageInfo;  //获取分页对象
+    }
+    public Long findLastId(){
+        return problemDao.findLastId();
+    }
+
+    public int addSubmitNum(Long problemId){
+        Problem problem = findProblemById(problemId);
+        Long oldsubmit = problem.getSubmit();
+        problem.setSubmit(oldsubmit+1);
+        return updateProblemById(problem);
+    }
+
+    public int addSolveNum(Long problemId){
+        Problem problem = findProblemById(problemId);
+        Long oldsolve = problem.getSolve();
+        problem.setSolve(oldsolve+1);
+        return updateProblemById(problem);
+    }
+
+    public void unzipDataFile(String fileName)
+    {
+        Runtime runtime = Runtime.getRuntime();
+        String cmd = PropertiesUtil.StringValue("7z")+ " x "+
+                PropertiesUtil.StringValue("local_judge_data")+"/"+fileName
+                +" -o"+PropertiesUtil.StringValue("local_judge_data");
+        log.info(cmd);
+        try {
+            runtime.exec(PropertiesUtil.StringValue("7z")+ " x "+
+                    PropertiesUtil.StringValue("local_judge_data")+"/"+fileName
+                    +" -o"+PropertiesUtil.StringValue("local_judge_data"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void addProblemData(String fileName, Long problemId){
+        /* unzip */
+        unzipDataFile(fileName);
+        // send judge module
         String path = PropertiesUtil.StringValue("local_judge_data") + "/" + problemId;
         String address = PropertiesUtil.StringValue("linux_address") +
-                ":" +
-                PropertiesUtil.StringValue("linux_data");
-        //String[] cmd = {"cmd /c scp -r " + path + " "+ address};
-        //String cmd = "cmd /c notepad";
-        Runtime runtime = Runtime.getRuntime();
-        Process exec = null;
+                ":" + PropertiesUtil.StringValue("linux_data");
+        Runtime runtime = Runtime.getRuntime();/*
         try {
-            exec = runtime.exec("cmd /c scp -r " + path + " "+ address);
+            runtime.exec("cmd /c scp -r " + path + " "+ address);
         } catch (IOException e) {
             e.printStackTrace();
             return;
-        }
+        }*/
         log.info("trans data" );
     }
 

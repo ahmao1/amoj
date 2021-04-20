@@ -1,9 +1,10 @@
 package amoj.service;
 
-import amoj.dao.ResultDao;
-import amoj.dao.SubmitDao;
+import amoj.dao.*;
+import amoj.entity.Problem;
 import amoj.entity.Result;
 import amoj.entity.Submit;
+import amoj.utils.PropertiesUtil;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,12 @@ public class ResultService {
     ResultDao resultDao;
     @Autowired
     SubmitDao submitDao;
+    @Autowired
+    UserDao userDao;
+    @Autowired
+    ProblemDao problemDao;
+    @Autowired
+    ProblemUserService problemUserDao;
 
     //入参: 当前页, 每页的记录数
     public PageInfo<Result> allResults(int page, int size){
@@ -32,9 +39,17 @@ public class ResultService {
         log.info("add result " + result);
         int res = resultDao.addResult(result);
         Submit submit = submitDao.findSubmitById(result.getSubmitId());
-        submit.setResultId((long) res);
-        int res0 = submitDao.updateSubmitById(submit);
-        log.info("result_id put submit " + res + " " +result.getSubmitId());
+        submit.setResultId(result.getResultId());
+        submitDao.updateSubmitById(submit);
+        log.info("result_id put submit " + result.getResultId() + " " +result.getSubmitId());
+
+        Problem problem = problemDao.findProblemById(submit.getProblemId());
+        if(result.getResult().equals(PropertiesUtil.RESULT[0])) {
+            problem.setSolve(problem.getSolve()+1);
+            problemDao.updateProblemById(problem);
+            problemUserDao.updateProblemUser(submit.getProblemId(),submit.getUserId());
+        }
+
         return res;
     }
 

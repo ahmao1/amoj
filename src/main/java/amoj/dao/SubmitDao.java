@@ -2,6 +2,7 @@ package amoj.dao;
 
 import amoj.entity.Submit;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.List;
 public interface SubmitDao {
 
     List<Submit> allSubmits();
-
+    List<Submit> finSubmitsByUserId(@Param("userId")String userId);
     Submit findSubmitById(Long submitId);
 
     int addSubmit(Submit submit);
@@ -18,4 +19,5 @@ public interface SubmitDao {
     int updateSubmitById(Submit submit);
 
     int deleteSubmitById(Long submitId);
+
 }

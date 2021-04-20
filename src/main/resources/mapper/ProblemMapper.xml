@@ -5,13 +5,19 @@
     <select id="allProblems" resultType="amoj.entity.Problem">
         select * from problem
     </select>
+    <select id="findLastId" resultType="long">
+        select max(problem_id) from problem
 
+    </select>
     <select id="findProblemById" parameterType="long" resultType="amoj.entity.Problem">
         SELECT * from problem where problem_id = #{problemId}
     </select>
+    <select id="findProblemsByTitle" resultType="amoj.entity.Problem">
+        SELECT * from problem where title like concat('%',#{word},'%')
+    </select>
 
     <insert id="addProblem" parameterType="amoj.entity.Problem">
-        insert into problem(problem_id,title,submit,solve,time,mem,desc,input,output,input_ex,output_ex,tip,last_submit_id)
+        insert into problem(problem_id,title,submit,solve,`time`,mem,`desc`,`input`,`output`,input_ex,output_ex,tip,last_submit_id)
         values (#{problemId},#{title},#{submit},#{solve},#{time},#{mem},#{desc},#{input},#{output},#{inputEx},#{outputEx},#{tip},#{lastSubmitId})
     </insert>
 
@@ -28,19 +34,19 @@
                 solve = #{solve},
             </if>
             <if test="time != null and time != ''">
-                time = #{time},
+                `time` = #{time},
             </if>
             <if test="mem != null and mem != ''">
                 mem = #{mem},
             </if>
             <if test="desc != null and desc != ''">
-                desc = #{desc},
+                `desc` = #{desc},
             </if>
             <if test="input != null and input != ''">
-                input = #{input},
+                `input` = #{input},
             </if>
             <if test="output != null and output != ''">
-                output = #{output},
+                `output` = #{output},
             </if>
             <if test="inputEx != null and inputEx != ''">
                 input_ex = #{inputEx},
@@ -55,7 +61,7 @@
                 last_submit_id = #{lastSubmitId},
             </if>
         </trim>
-        where problem_id=#{ProblemId}
+        where problem_id=#{problemId}
     </update>
 
     <delete id="deleteProblemById" parameterType="long">

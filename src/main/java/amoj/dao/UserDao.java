@@ -19,5 +19,5 @@ public interface UserDao {
 
     int deleteUserById(Long userId);
 
-    User authenticate(@Param("id")Long userId, @Param("password")String password);
+    User authenticate(@Param("userId")Long userId, @Param("password")String password);
 }
